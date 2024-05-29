@@ -6,6 +6,7 @@ import Local from "@/components/Local";
 import Servicos from "@/components/Servicos";
 import "@/styles/globals.css";
 import MyNavbar from "@/components/MyNavbar";
+import Rodape from "@/components/Rodape";
 
 
 
@@ -18,6 +19,7 @@ export default function App({ Component, pageProps }) {
      <Agendar />
      <Local />
      <Galeria />
+     <Rodape />
      <FloatingWhatsAppButton />
       <Component {...pageProps} />
     </>
