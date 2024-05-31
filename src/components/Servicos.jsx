@@ -3,7 +3,7 @@ import React from 'react';
 function Servicos() {
   return (
     <section className="text-center" id='servicos'>
-      <img src="/images/servico.svg" alt="Agendamento titulo" style={{ width: '20vw', height: 'auto' }} className='titulo' />
+      <img src="/images/servico.svg" alt="Agendamento titulo" className='titulo' />
 
       <div className="cards">
         <div className="cardestilo">

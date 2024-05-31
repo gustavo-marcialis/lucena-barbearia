@@ -3,7 +3,7 @@ import React from 'react';
 function Local() {
   return (
     <section className="text-center" id='local'>
-      <img src="/images/local.svg" alt="Local Título" style={{ width: '20vw', height: 'auto' }} className='titulo' />
+      <img src="/images/local.svg" alt="Local Título" className='titulo' />
       <br />
       <img src="/images/mapa.png" alt="Mapa" style={{ width: '50vw', height: 'auto' }} />
       <h4>Rua Santo Antonio, 622, Vila Caiçara - Praia grande/SP</h4>
