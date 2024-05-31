@@ -1,9 +1,11 @@
 import React from 'react';
+import { Div, Button } from 'react-bootstrap';
+
 
 function Galeria() {
   return (
     <section className="bg-escuro text-light text-center" id='galeria'>
-      <img src="/images/galeria.svg" alt="Agendamento Título" style={{ width: '20vw', height: 'auto' }} className='titulo' />
+      <img src="/images/galeria.svg" alt="Agendamento Título" className='titulo' />
 
       <div className="d-flex justify-content-center galeria">
         <img src="/images/fachada.jpg" className="d-block" alt="Fachada" />
