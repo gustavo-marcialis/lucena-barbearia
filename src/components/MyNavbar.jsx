@@ -14,10 +14,9 @@ const MyNavbar = () => {
           <Nav className="mr-auto">
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#servicos">Serviços</Nav.Link>
-            <Nav.Link href="#agendar">Agendar</Nav.Link>
-            <Nav.Link href="#local">Local</Nav.Link>
+            <Nav.Link href="#local">Localização</Nav.Link>
             <Nav.Link href="#galeria">Galeria</Nav.Link>
-            
+
           </Nav>
           <Nav>
             <Link to="agendar" smooth={true} duration={500}><button className="agendar">Fazer Agendamento</button></Link>

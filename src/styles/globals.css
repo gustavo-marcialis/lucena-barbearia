@@ -80,15 +80,20 @@
 .agendar {
   background-color: #332321;
   color: #fff;
-  
+  border: none;
+  text-decoration: none;
 }
 
 .agendar a {
   color: #fff;
+  border: none;
+  text-decoration: none;
 }
 
 .agendar:hover {
+  background-color: #332321;
   color: #fff;
+  border: none;
   text-decoration: none;
 }
 
@@ -118,6 +123,19 @@
   margin-bottom: 6vh;
   background-color: #332321;
   color: #fff;
+  border: none;
+  text-decoration: none;
+}
+
+.vermapa:hover {
+  height: 4vh;
+  font-size: 100%;
+  margin-top: 1vh;
+  margin-bottom: 6vh;
+  background-color: #332321;
+  color: #fff;
+  text-decoration: none;
+  border: none;
 }
 
 .galeria img {
@@ -139,6 +157,19 @@
   font-size: 100%;
   margin-top: 1vh;
   margin-bottom: 6vh;
+  text-decoration: none;
+  border: none;
+}
+
+.insta:hover {
+  color: #fff;
+  background-color: #564746;
+  height: 4vh;
+  font-size: 100%;
+  margin-top: 1vh;
+  margin-bottom: 6vh;
+  text-decoration: none;
+  border: none;
 }
 
 .whatsapp-button {
