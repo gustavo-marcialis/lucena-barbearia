@@ -15,7 +15,7 @@
   margin-top: 2vh;
 }
 
-.banner h1{
+.banner h1 {
   font-size: 400%;
 }
 
@@ -32,36 +32,50 @@
 }
 
 .cardestilo {
-  width: 90%; /* Usando porcentagem para responsividade */
-  max-width: 300px; /* Limita a largura máxima */
-  height: auto; /* Remove a altura fixa */
+  width: 90%;
+  /* Usando porcentagem para responsividade */
+  max-width: 300px;
+  /* Limita a largura máxima */
+  height: auto;
+  /* Remove a altura fixa */
   box-shadow: 0px 3px 4px 3px rgba(0, 0, 0, 0.40);
   margin-bottom: 2rem;
-  padding: 1rem; /* Ajusta o padding para ser mais consistente */
-  text-align: center; /* Centraliza o texto */
+  padding: 1rem;
+  /* Ajusta o padding para ser mais consistente */
+  text-align: center;
+  /* Centraliza o texto */
 }
 
 .cardestilo img {
-  width: 50px; /* Define um tamanho fixo para a imagem */
+  width: 50px;
+  /* Define um tamanho fixo para a imagem */
   height: auto;
-  margin-bottom: 1rem; /* Adiciona margem inferior para espaçamento */
+  margin-bottom: 1rem;
+  /* Adiciona margem inferior para espaçamento */
 }
 
 .cardestilo h3 {
-  font-size: 1.5rem; /* Ajusta o tamanho da fonte */
-  margin-bottom: 0.5rem; /* Adiciona margem inferior para espaçamento */
+  font-size: 1.5rem;
+  /* Ajusta o tamanho da fonte */
+  margin-bottom: 0.5rem;
+  /* Adiciona margem inferior para espaçamento */
 }
 
 .cardestilo p {
-  font-size: 1rem; /* Ajusta o tamanho da fonte */
-  margin-bottom: 1rem; /* Adiciona margem inferior para espaçamento */
+  font-size: 1rem;
+  /* Ajusta o tamanho da fonte */
+  margin-bottom: 1rem;
+  /* Adiciona margem inferior para espaçamento */
 }
 
 .cardestilo span {
-  font-size: 0.9rem; /* Ajusta o tamanho da fonte */
+  font-size: 0.9rem;
+  /* Ajusta o tamanho da fonte */
   font-weight: bold;
-  display: block; /* Faz o span ocupar toda a linha */
-  margin-top: 0.5rem; /* Adiciona margem superior para espaçamento */
+  display: block;
+  /* Faz o span ocupar toda a linha */
+  margin-top: 0.5rem;
+  /* Adiciona margem superior para espaçamento */
 }
 
 @media (min-width: 768px) {
@@ -78,13 +92,15 @@
 
 @media (min-width: 600px) {
   .cardestilo {
-    width: 45%; /* Ajusta a largura para telas maiores */
+    width: 45%;
+    /* Ajusta a largura para telas maiores */
   }
 }
 
 @media (min-width: 900px) {
   .cardestilo {
-    width: 30%; /* Ajusta a largura para telas ainda maiores */
+    width: 30%;
+    /* Ajusta a largura para telas ainda maiores */
   }
 }
 
@@ -135,6 +151,8 @@
   margin-bottom: 6vh;
   border: none;
   text-decoration: none;
+  justify-content: center;
+  align-items: center;
 }
 
 .botao:hover {
@@ -313,7 +331,3 @@
 .cart-button .cart-icon {
   width: 1rem;
 }
-
-
-
-
