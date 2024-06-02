@@ -64,6 +64,18 @@
   margin-top: 0.5rem; /* Adiciona margem superior para espaçamento */
 }
 
+@media (min-width: 768px) {
+  .mobile-only {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .mobile-only {
+    display: block;
+  }
+}
+
 @media (min-width: 600px) {
   .cardestilo {
     width: 45%; /* Ajusta a largura para telas maiores */
@@ -116,26 +128,29 @@
   font-size: 150%;
 }
 
-.vermapa {
+.botao {
   height: 4vh;
   font-size: 100%;
   margin-top: 1vh;
   margin-bottom: 6vh;
-  background-color: #332321;
-  color: #fff;
   border: none;
   text-decoration: none;
 }
 
-.vermapa:hover {
+.botao:hover {
   height: 4vh;
   font-size: 100%;
   margin-top: 1vh;
   margin-bottom: 6vh;
-  background-color: #332321;
-  color: #fff;
   text-decoration: none;
   border: none;
+  background-color: #332321;
+  color: #fff;
+}
+
+.botao-dark {
+  background-color: #332321;
+  color: #fff;
 }
 
 .galeria img {
@@ -150,18 +165,12 @@
   margin-right: 2vh;
 }
 
-.insta {
+.botao-light {
   color: #fff;
   background-color: #564746;
-  height: 4vh;
-  font-size: 100%;
-  margin-top: 1vh;
-  margin-bottom: 6vh;
-  text-decoration: none;
-  border: none;
 }
 
-.insta:hover {
+.botao-light:hover {
   color: #fff;
   background-color: #564746;
   height: 4vh;
@@ -304,3 +313,7 @@
 .cart-button .cart-icon {
   width: 1rem;
 }
+
+
+
+

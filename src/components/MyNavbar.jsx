@@ -9,7 +9,11 @@ const MyNavbar = () => {
         <Navbar.Brand href="#">
           <Image src="/images/logo-h.svg" alt="Logo" width="70" />
         </Navbar.Brand>
+        <Nav>
+            <Link to="agendar" smooth={true} duration={500}><button className="botao-dark mobile-only">Fazer Agendamento</button></Link>
+          </Nav>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
+       
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link href="#home">Home</Nav.Link>
@@ -19,7 +23,7 @@ const MyNavbar = () => {
 
           </Nav>
           <Nav>
-            <Link to="agendar" smooth={true} duration={500}><button className="agendar">Fazer Agendamento</button></Link>
+            <Link to="agendar" smooth={true} duration={500}><button className="botao-dark">Fazer Agendamento</button></Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
