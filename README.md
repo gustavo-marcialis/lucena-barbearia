@@ -45,6 +45,7 @@ Website com sistema de agendamento para a Barbearia Lucena.
 ## Habilidades Exercitadas
 
 - Criação de UI/UX Design
+- Componentização em React
 - CSS Flex-box
 - Utilização de bibliotecas React
-- Utilização ds classes Bootstrap
+- Utilização de classes Bootstrap
