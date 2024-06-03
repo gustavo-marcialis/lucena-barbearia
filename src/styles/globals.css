@@ -82,11 +82,19 @@
   .mobile-only {
     display: none;
   }
+
+  .banner {
+    margin-top: 5vh;
+  }
 }
 
 @media (max-width: 767px) {
   .mobile-only {
     display: block;
+  }
+
+  .banner {
+    margin-top: 5vh;
   }
 }
 
