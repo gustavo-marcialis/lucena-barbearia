@@ -6,7 +6,7 @@ function Agendar() {
   return (
     <main className="bg-escuro text-light text-center" id='agendar'>
       <Image src="/images/agendamento.svg" alt="Agendamento Título" className='titulo' />
-      <h4>Selecione um serviço e faça seu agendamento!</h4>
+      <h4>Faça seu agendamento em menos de um minuto; simples e rápido!</h4>
       <Calendly url="https://calendly.com/lucenabarbearia013" />
     </main>
   );
