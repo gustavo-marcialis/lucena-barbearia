@@ -14,7 +14,6 @@ export default function App({ Component, pageProps }) {
   return (
     <>
     <MyNavbar />
-    <br />
      <Banner />
      <Servicos />
      <Agendar />
