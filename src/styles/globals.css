@@ -163,19 +163,33 @@
 }
 
 .botao:hover {
-  height: 4vh;
   font-size: 100%;
   margin-top: 1vh;
   margin-bottom: 6vh;
-  text-decoration: none;
   border: none;
-  background-color: #332321;
-  color: #fff;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
 }
 
 .botao-dark {
   background-color: #332321;
   color: #fff;
+}
+
+.botao-dark:hover {
+  background-color: #332321;
+  color: #fff;
+}
+
+.botao-light {
+  color: #fff;
+  background-color: #564746;
+}
+
+.botao-light:hover {
+  color: #fff;
+  background-color: #564746;
 }
 
 .galeria img {
@@ -188,22 +202,6 @@
   width: 20vw;
   height: auto;
   margin-right: 2vh;
-}
-
-.botao-light {
-  color: #fff;
-  background-color: #564746;
-}
-
-.botao-light:hover {
-  color: #fff;
-  background-color: #564746;
-  height: 4vh;
-  font-size: 100%;
-  margin-top: 1vh;
-  margin-bottom: 6vh;
-  text-decoration: none;
-  border: none;
 }
 
 .whatsapp-button {
