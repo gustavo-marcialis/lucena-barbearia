@@ -107,7 +107,7 @@ function Servicos() {
           </div>
         </div>
       </div>
-      <Image className='mb-5' src="/images/precos.jpg" alt="Preços" style={{ width: '350px', height: 'auto' }} />
+      <Image className='mb-5' src="/images/precos.jpg" alt="Preços" style={{ width: '300px', height: 'auto' }} />
 
     </section>
   );
