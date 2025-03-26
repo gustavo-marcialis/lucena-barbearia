@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { InlineWidget as Calendly } from 'react-calendly';
 import { Image, Container, Row, Col } from 'react-bootstrap';
 
@@ -18,6 +18,21 @@ function Agendar() {
     },
   ];
 
+  // Aguardar o Calendly ser renderizado antes de rolar
+  useEffect(() => {
+    if (selectedCalendlyUrl) {
+      // Rola até o Calendly após o componente ser exibido
+      const agendaElement = document.getElementById("agenda");
+      if (agendaElement) {
+        agendaElement.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [selectedCalendlyUrl]); // Executa sempre que o URL do Calendly for alterado
+
+  const handleProfissionalClick = (calendlyUrl) => {
+    setSelectedCalendlyUrl(calendlyUrl);
+  };
+
   return (
     <main className="bg-escuro text-light text-center" id="agendar">
       <Image src="/images/agendamento.svg" alt="Agendamento Título" className="titulo" />
@@ -27,7 +42,7 @@ function Agendar() {
         <Row>
           {profissionais.map((profissional, index) => (
             <Col key={index} xs={12} md={6} className="mb-4">
-              <div onClick={() => setSelectedCalendlyUrl(profissional.calendlyUrl)} style={{ cursor: 'pointer' }}>
+              <div onClick={() => handleProfissionalClick(profissional.calendlyUrl)} style={{ cursor: 'pointer' }}>
                 <Image
                   src={profissional.foto}
                   alt={profissional.nome}
@@ -42,7 +57,11 @@ function Agendar() {
         </Row>
       </Container>
 
-      {selectedCalendlyUrl && <Calendly url={selectedCalendlyUrl} />}
+      {selectedCalendlyUrl && (
+        <div id="agenda">
+          <Calendly url={selectedCalendlyUrl} />
+        </div>
+      )}
     </main>
   );
 }
