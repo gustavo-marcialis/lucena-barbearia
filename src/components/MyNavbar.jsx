@@ -10,7 +10,10 @@ const MyNavbar = () => {
           <Image src="/images/logo-h.svg" alt="Logo" width="70" />
         </Navbar.Brand>
         <Nav>
-            
+            <Link to="agendar" smooth={true} duration={500}>
+  <a className="botao-dark mobile-only" role="button">Fazer Agendamento</a>
+</Link>
+          
           </Nav>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
        
