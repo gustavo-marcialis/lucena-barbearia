@@ -50,7 +50,7 @@ function Agendar() {
                   className="mb-2"
                   style={{ width: '150px', height: '150px' }}
                 />
-                <h5>{profissional.nome}</h5>
+                <p><strong>{profissional.nome}</strong></p>
               </div>
             </Col>
           ))}
