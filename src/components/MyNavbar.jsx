@@ -31,7 +31,14 @@ const MyNavbar = () => {
 
           </Nav>
           <Nav>
-            <Link to="agendar" smooth={true} duration={500}><button className="botao-dark">Fazer Agendamento</button></Link>
+            <Link to="agendar" smooth={true} duration={500} role="button" tabIndex="-1">
+  <button
+    className="botao-dark mobile-only"
+    aria-label="Fazer Agendamento"
+  >
+    Fazer Agendamento
+  </button>
+</Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
