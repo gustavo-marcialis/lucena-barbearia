@@ -19,7 +19,7 @@ function Local() {
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
-      <h4>Rua Santo Antonio, 622, Vila Caiçara - Praia grande/SP</h4>
+      <p><strong>Rua Santo Antonio, 622, Vila Caiçara - Praia grande/SP</strong></p>
 
     
     </section>
