@@ -4,7 +4,7 @@ import { Image, Div, Button } from 'react-bootstrap';
 function Galeria() {
   return (
     <section className="bg-escuro text-light text-center" id='galeria'>
-      <Image src="/images/galeria.svg" alt="Agendamento Título" className='titulo' />
+      <Image src="/images/galeria.svg" alt="Galeria de Fotos" className='titulo' />
 
       <div className="d-flex justify-content-center galeria">
         <Image src="/images/fachada.jpg" className="d-block" alt="Fachada" />
