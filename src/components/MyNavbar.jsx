@@ -12,7 +12,7 @@ const MyNavbar = () => {
         <Nav>
             <Link to="agendar" smooth={true} duration={500} role="button">
   <button
-    className="botao-dark mobile-only"
+    className="botao-dark"
     aria-label="Fazer Agendamento"
   >
     Fazer Agendamento
