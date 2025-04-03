@@ -110,7 +110,7 @@ function Servicos() {
       <Image className='mb-5' src="/images/precos.jpg" alt="Tabela de Preços" style={{ width: '300px', height: 'auto' }} aria-describedby="precoTabela" />
 
 
-      <div id="precoTabela" className="sr-only">
+      <div id="precoTabela" className="sr-only" style={{ display: none; }} >
 		<table>
 		<caption>Lista de serviços e preços</caption>
 		<thead>
