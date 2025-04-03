@@ -1,11 +1,13 @@
-import React from 'react';
+}
+
+export default Servicos;import React from 'react';
 import { Image } from 'react-bootstrap';
 
 
 function Servicos() {
   return (
     <section className="text-center" id='servicos'>
-      <Image src="/images/servico.svg" alt="Agendamento titulo" className='titulo' />
+      <Image src="/images/servico.svg" alt="Serviços" className='titulo' />
 
       <div className="cards">
         <div class="card">
@@ -107,8 +109,59 @@ function Servicos() {
           </div>
         </div>
       </div>
-      <Image className='mb-5' src="/images/precos.jpg" alt="Preços" style={{ width: '300px', height: 'auto' }} />
-
+      <Image className='mb-5' src="/images/precos.jpg" alt="Tabela de Preços" style={{ width: '300px', height: 'auto' }} aria-describedby="precoTabela" />
+		
+		
+		<div id="precoTabela" className="sr-only">
+		<table>
+		<caption>Lista de serviços e preços</caption>
+		<thead>
+		<tr>
+		<th>Serviço</th>
+		<th>Preço</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+		<td>Corte</td>
+		<td>R$ 40,00</td>
+		</tr>
+		<tr>
+		<td>Barba</td>
+		<td>R$ 40,00</td>
+		</tr>
+		<tr>
+		<td>Corte + Barba</td>
+		<td>R$ 70,00</td>
+		</tr>
+		<tr>
+		<td>Pézinho</td>
+		<td>R$ 10,00</td>
+		</tr>
+		<tr>
+		<td>Pigmentação</td>
+		<td>R$ 15,00</td>
+		</tr>
+		<tr>
+		<td>Matização</td>
+		<td>R$ 15,00</td>
+		</tr>
+		<tr>
+		<td>Alisamento</td>
+		<td>R$ 30,00</td>
+		</tr>
+		<tr>
+		<td>Luzes</td>
+		<td>R$ 70,00</td>
+		</tr>
+		<tr>
+		<td>Nevou</td>
+		<td>R$ 100,00</td>
+		</tr>
+		</tbody>
+		</table>
+		</div>
+		
     </section>
   );
 }
