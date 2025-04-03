@@ -5,7 +5,7 @@ import { Image } from 'react-bootstrap';
 function Servicos() {
   return (
     <section className="text-center" id='servicos'>
-      <Image src="/images/servico.svg" alt="Agendamento titulo" className='titulo' />
+      <Image src="/images/servico.svg" alt="Serviços" className='titulo' />
 
       <div className="cards">
         <div class="card">
@@ -107,7 +107,7 @@ function Servicos() {
           </div>
         </div>
       </div>
-      <Image className='mb-5' src="/images/precos.jpg" alt="Preços" style={{ width: '300px', height: 'auto' }} />
+      <Image className='mb-5' src="/images/precos.jpg" alt="Tabela de Preços" style={{ width: '300px', height: 'auto' }} aria-describedby="precoTabela" />
 
     </section>
   );
