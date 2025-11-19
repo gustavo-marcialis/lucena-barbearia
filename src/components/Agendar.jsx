@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { InlineWidget as Calendly } from 'react-calendly';
-// Importação: Adicionamos o componente 'Alert' do react-bootstrap
 import { Image, Container, Row, Col, Alert } from 'react-bootstrap'; 
 
 // === INÍCIO: NOVAS VARIÁVEIS DE CONTROLE ===
@@ -13,9 +12,8 @@ const IS_TEMOTEO_ON_VACATION = true; // <-- MUDAR PARA false QUANDO O TEMOTEO VO
 // Objeto que armazena os dados do Vinícius. Ele usará a mesma URL de agendamento do Temoteo.
 const substituto = {
   nome: 'Vinícius (Substituto Temporário)',
-  // ATENÇÃO: Se tiver uma foto específica para o Vinícius, mude o caminho abaixo.
-  // Por enquanto, usaremos a foto do profissional genérica:
-  foto: '/images/profissional.jpg',        
+  // ALTERAÇÃO 1: Novo caminho da foto para o Vinícius (vinicius.png)
+  foto: '/images/vinicius.png',        
   calendlyUrl: 'https://calendly.com/temoteolucena/30min?back=1&month=2024-06', // Mesma URL do Temoteo
 };
 
@@ -33,12 +31,12 @@ function Agendar() {
   const [selectedCalendlyUrl, setSelectedCalendlyUrl] = useState(null);
 
   // Documentação: Lógica que decide quem aparece na lista.
-  // Se IS_TEMOTEO_ON_VACATION for true, o objeto 'substituto' entra no lugar de 'Temoteo',
-  // mantendo a mesma URL de agendamento.
+  // Se IS_TEMOTEO_ON_VACATION for true, o objeto 'substituto' entra no lugar de 'Temoteo'.
   const profissionais = [
     {
       nome: 'Ivan',
-      foto: '/images/lucena.jpg',
+      // ALTERAÇÃO 2: Novo caminho da foto para o Ivan (lucena.png)
+      foto: '/images/lucena.png',
       calendlyUrl: 'https://calendly.com/lucenabarbearia013/lucena-barbearia?back=1&month=2024-06',
     },
     // Condição para exibir Temoteo ou o Substituto Vinícius
@@ -68,7 +66,6 @@ function Agendar() {
       
       {/* Documentação: 
       Alerta condicional que só é exibido se Temoteo estiver de férias.
-      Usa a variante 'warning' para dar destaque ao aviso.
       */}
       {IS_TEMOTEO_ON_VACATION && (
         <Container className='mb-4'>
@@ -97,8 +94,8 @@ function Agendar() {
                 <Image
                   src={profissional.foto}
                   alt={profissional.nome}
-                  roundedCircle
-                  className="mb-2"
+                  // ALTERAÇÃO 3: Removida a propriedade roundedCircle para tirar o arredondamento
+                  className="mb-2" 
                   style={{ width: '150px', height: '150px' }}
                 />
                 <p><strong>{profissional.nome}</strong></p>
