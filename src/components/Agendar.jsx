@@ -74,7 +74,7 @@ function Agendar() {
               <Alert variant="warning" className="text-center text-dark">
                 <Alert.Heading>Aviso Importante: Temoteo em Férias!</Alert.Heading>
                 <p>
-                  O profissional **Temoteo** está de férias e, nesse período, será substituído pelo **Vinícius**.
+                  O profissional Temoteo está de férias e retorna em Maio. Nesse período, será substituído pelo Vinícius.
                   <br />
                   Você pode agendar normalmente através do Vinícius, que usará a mesma agenda. O Temoteo retorna após o período de férias.
                 </p>
