@@ -175,10 +175,13 @@
 .botao-dark {
   background-color: #332321;
   color: #fff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .botao-dark:hover {
-  background-color: #332321;
+  background-color: #4a3330;
   color: #fff;
 }
 
@@ -235,6 +238,7 @@
   --light: #d9d9d9;
   --zinc-800: #18181b;
   --bg-linear: linear-gradient(0deg, var(--primary) 50%, var(--light) 125%);
+  --card-shadow: rgba(0, 0, 0, 0.4);
 
   position: relative;
 
@@ -243,12 +247,18 @@
   gap: 0.75rem;
 
   padding: 1rem;
-  width: 14rem;
+  width: 16rem;
   background-color: var(--bg-card);
 
   border-radius: 1rem;
 
   margin-bottom: 6vh;
+  box-shadow: 0 10px 15px -3px var(--card-shadow), 0 4px 6px -2px var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 20px 25px -5px var(--card-shadow), 0 10px 10px -5px var(--card-shadow);
 }
 
 .image_container {

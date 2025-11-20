@@ -5,6 +5,7 @@ import Galeria from "@/components/Galeria";
 import Local from "@/components/Local";
 import Servicos from "@/components/Servicos";
 import "@/styles/globals.css";
+import "@/styles/animations.css";
 import MyNavbar from "@/components/MyNavbar";
 import Rodape from "@/components/Rodape";
 
