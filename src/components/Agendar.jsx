@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { InlineWidget as Calendly } from 'react-calendly';
-import { Image, Container, Row, Col, Alert } from 'react-bootstrap'; 
+import { Image, Container, Row, Col, Alert } from 'react-bootstrap';
 
 // === INÍCIO: NOVAS VARIÁVEIS DE CONTROLE ===
 
