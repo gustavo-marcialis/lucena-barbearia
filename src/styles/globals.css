@@ -1,6 +1,14 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
 
+body {
+  font-family: var(--font-lato), sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-playfair), serif;
+}
+
 .bg-escuro {
   background-image: url('/images/Background.png');
   color: #fff;
@@ -345,4 +353,84 @@
 
 .cart-button .cart-icon {
   width: 1rem;
+}
+
+/* Price Table Styles */
+.price-table-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  width: 100%;
+}
+
+.price-table {
+  width: 90%;
+  max-width: 700px;
+  border-collapse: collapse;
+  background: linear-gradient(145deg, #3a2a28, #2e1f1d);
+  color: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+  border: 1px solid #564746;
+}
+
+.price-table caption {
+  caption-side: top;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #332321;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-playfair), serif;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.price-table th,
+.price-table td {
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+}
+
+.price-table th {
+  background-color: #251816;
+  color: #d4af37; /* Gold text */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-bottom: 2px solid #d4af37;
+}
+
+.price-table th:last-child {
+  text-align: right;
+}
+
+.price-table td {
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2); /* Subtle gold separator */
+}
+
+.price-table tr:last-child td {
+  border-bottom: none;
+}
+
+.price-table tr:hover {
+  background-color: rgba(212, 175, 55, 0.1); /* Gold tint on hover */
+  transform: scale(1.01);
+  transition: all 0.2s ease;
+}
+
+.price-table td:last-child {
+  text-align: right;
+}
+
+.price-badge {
+  background-color: #fff;
+  color: #332321; /* Brown text */
+  padding: 0.35rem 1rem;
+  border-radius: 9999px; /* Fully rounded */
+  font-weight: bold;
+  display: inline-block;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 1.1rem;
 }
