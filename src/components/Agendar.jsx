@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { InlineWidget as Calendly } from 'react-calendly';
-import { Image, Container, Row, Col, Alert } from 'react-bootstrap'; 
+import Image from 'next/image'; // Alterado: Importando do next/image
+import { Container, Row, Col, Alert } from 'react-bootstrap';
 
 // === INÍCIO: NOVAS VARIÁVEIS DE CONTROLE ===
 
@@ -62,7 +63,15 @@ function Agendar() {
 
   return (
     <main className="bg-escuro text-light text-center" id="agendar">
-      <Image src="/images/agendamento.svg" alt="Agendamento Título" className="titulo" />
+      <div style={{ position: 'relative', width: '100%', height: 'auto', maxWidth: '600px', margin: '0 auto' }} className="titulo">
+        <Image
+          src="/images/agendamento.svg"
+          alt="Agendamento Título"
+          width={500}
+          height={100}
+          style={{ width: '100%', height: 'auto' }}
+        />
+      </div>
       
       {/* Documentação: 
       Alerta condicional que só é exibido se Temoteo estiver de férias.
@@ -90,16 +99,22 @@ function Agendar() {
         <Row>
           {profissionais.map((profissional, index) => (
             <Col key={index} xs={12} md={6} className="mb-4">
-              <div onClick={() => handleProfissionalClick(profissional.calendlyUrl)} style={{ cursor: 'pointer' }}>
+              <button
+                onClick={() => handleProfissionalClick(profissional.calendlyUrl)}
+                style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'inherit', padding: 0 }}
+                type="button"
+                className="d-flex flex-column align-items-center w-100"
+              >
                 <Image
                   src={profissional.foto}
                   alt={profissional.nome}
-                  // ALTERAÇÃO 3: Removida a propriedade roundedCircle para tirar o arredondamento
+                  width={150}
+                  height={150}
                   className="mb-2" 
-                  style={{ width: '150px', height: '150px' }}
+                  style={{ objectFit: "cover" }} // Garantir que não distorça
                 />
                 <p><strong>{profissional.nome}</strong></p>
-              </div>
+              </button>
             </Col>
           ))}
         </Row>
