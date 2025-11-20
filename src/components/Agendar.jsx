@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { InlineWidget as Calendly } from 'react-calendly';
-import Image from 'next/image'; // Alterado: Importando do next/image
-import { Container, Row, Col, Alert } from 'react-bootstrap';
+import { Image, Container, Row, Col, Alert } from 'react-bootstrap';
 
 // === INÍCIO: NOVAS VARIÁVEIS DE CONTROLE ===
 
@@ -63,15 +62,7 @@ function Agendar() {
 
   return (
     <main className="bg-escuro text-light text-center" id="agendar">
-      <div style={{ position: 'relative', width: '100%', height: 'auto', maxWidth: '600px', margin: '0 auto' }} className="titulo">
-        <Image
-          src="/images/agendamento.svg"
-          alt="Agendamento Título"
-          width={500}
-          height={100}
-          style={{ width: '100%', height: 'auto' }}
-        />
-      </div>
+      <Image src="/images/agendamento.svg" alt="Agendamento Título" className="titulo" />
       
       {/* Documentação: 
       Alerta condicional que só é exibido se Temoteo estiver de férias.
@@ -99,22 +90,16 @@ function Agendar() {
         <Row>
           {profissionais.map((profissional, index) => (
             <Col key={index} xs={12} md={6} className="mb-4">
-              <button
-                onClick={() => handleProfissionalClick(profissional.calendlyUrl)}
-                style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'inherit', padding: 0 }}
-                type="button"
-                className="d-flex flex-column align-items-center w-100"
-              >
+              <div onClick={() => handleProfissionalClick(profissional.calendlyUrl)} style={{ cursor: 'pointer' }}>
                 <Image
                   src={profissional.foto}
                   alt={profissional.nome}
-                  width={150}
-                  height={150}
+                  // ALTERAÇÃO 3: Removida a propriedade roundedCircle para tirar o arredondamento
                   className="mb-2" 
-                  style={{ objectFit: "cover" }} // Garantir que não distorça
+                  style={{ width: '150px', height: '150px' }}
                 />
                 <p><strong>{profissional.nome}</strong></p>
-              </button>
+              </div>
             </Col>
           ))}
         </Row>

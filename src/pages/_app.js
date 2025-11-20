@@ -1,15 +1,28 @@
+import Agendar from "@/components/Agendar";
+import Banner from "@/components/Banner";
+import FloatingWhatsAppButton from "@/components/FloatingWhatsAppButton";
+import Galeria from "@/components/Galeria";
+import Local from "@/components/Local";
+import Servicos from "@/components/Servicos";
 import "@/styles/globals.css";
+import "@/styles/animations.css";
 import MyNavbar from "@/components/MyNavbar";
 import Rodape from "@/components/Rodape";
-import FloatingWhatsAppButton from "@/components/FloatingWhatsAppButton";
+
+
 
 export default function App({ Component, pageProps }) {
   return (
     <>
-      <MyNavbar />
+    <MyNavbar />
+     <Banner />
+     <Servicos />
+     <Agendar />
+     <Local />
+     <Galeria />
+     <Rodape />
+     <FloatingWhatsAppButton />
       <Component {...pageProps} />
-      <FloatingWhatsAppButton />
-      <Rodape />
     </>
   );
 }
