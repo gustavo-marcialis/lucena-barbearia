@@ -1,0 +1,49 @@
+.heroSection {
+  background-image: linear-gradient(rgba(51, 35, 33, 0.85), rgba(51, 35, 33, 0.7)), url('/images/Background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 80vh;
+  margin-top: 0;
+  color: #fff !important;
+}
+
+.scheduleBadge {
+  background-color: rgba(212, 175, 55, 0.2);
+  border: 1px solid #d4af37;
+}
+
+.scheduleText {
+  color: #d4af37 !important;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.title {
+  font-family: var(--font-playfair);
+  font-weight: 700;
+  color: #fff !important;
+}
+
+.subtitle {
+  font-family: var(--font-lato);
+  opacity: 0.9;
+  color: #f8f9fa !important;
+}
+
+.ctaButton {
+  background-color: #d4af37 !important;
+  border-color: #d4af37 !important;
+  color: #332321 !important;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  transition: all 0.3s ease;
+}
+
+.ctaButton:hover,
+.ctaButton:focus {
+  background-color: #fff !important;
+  color: #332321 !important;
+  border-color: #fff !important;
+  transform: translateY(-2px);
+}
