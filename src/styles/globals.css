@@ -395,11 +395,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .price-table th {
   background-color: #251816;
-  color: #d4af37; /* Gold text */
+  color: #D4AF37;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  border-bottom: 2px solid #d4af37;
+  border-bottom: 2px solid #D4AF37;
 }
 
 .price-table th:last-child {
@@ -407,7 +407,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .price-table td {
-  border-bottom: 1px solid rgba(212, 175, 55, 0.2); /* Subtle gold separator */
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 .price-table tr:last-child td {
@@ -415,7 +415,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .price-table tr:hover {
-  background-color: rgba(212, 175, 55, 0.1); /* Gold tint on hover */
+  background-color: rgba(212, 175, 55, 0.1);
   transform: scale(1.01);
   transition: all 0.2s ease;
 }
