@@ -394,12 +394,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .price-table th {
-  background-color: #251816;
-  color: #D4AF37;
+  background-color: #ffffff;
+  color: #800020; /* Bordeaux text */
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  border-bottom: 2px solid #D4AF37;
+  border-bottom: 2px solid #800020;
 }
 
 .price-table th:last-child {
@@ -407,7 +407,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .price-table td {
-  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  border-bottom: 1px solid rgba(128, 0, 32, 0.2); /* Subtle bordeaux separator */
 }
 
 .price-table tr:last-child td {
@@ -415,7 +415,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .price-table tr:hover {
-  background-color: rgba(212, 175, 55, 0.1);
+  background-color: rgba(128, 0, 32, 0.1); /* Bordeaux tint on hover */
   transform: scale(1.01);
   transition: all 0.2s ease;
 }
