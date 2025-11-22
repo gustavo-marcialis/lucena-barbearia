@@ -1,0 +1,138 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 2rem;
+  font-family: var(--font-lato, sans-serif);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 9999px; /* Pill shape */
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.5;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Primary Variant (Burgundy) */
+.primary {
+  background-color: #800020;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(128, 0, 32, 0.4);
+}
+
+.primary:hover:not(:disabled) {
+  background-color: #600018;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(128, 0, 32, 0.6);
+}
+
+.primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Gold Variant */
+.gold {
+  background-color: #d4af37;
+  color: #332321;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+}
+
+.gold:hover:not(:disabled) {
+  background-color: #f0c43f;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
+}
+
+/* Dark Variant */
+.dark {
+  background-color: #332321;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(51, 35, 33, 0.4);
+}
+
+.dark:hover:not(:disabled) {
+  background-color: #4a3330;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(51, 35, 33, 0.6);
+}
+
+/* Outline Variant */
+.outline {
+  background-color: transparent;
+  border-color: #d4af37;
+  color: #d4af37;
+}
+
+.outline:hover:not(:disabled) {
+  background-color: #d4af37;
+  color: #332321;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+/* Ghost Variant (Text only) */
+.ghost {
+  background-color: transparent;
+  color: #ffffff;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.ghost:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Sizes */
+.sm {
+  padding: 0.5rem 1.5rem;
+  font-size: 0.875rem;
+}
+
+.md {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+}
+
+.lg {
+  padding: 1rem 3rem;
+  font-size: 1.125rem;
+}
+
+/* Ripple/Shine effect on hover for primary/gold */
+.primary::after, .gold::after, .dark::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: left 0.5s;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.primary:hover::after, .gold:hover::after, .dark:hover::after {
+  left: 200%;
+  transition: left 0.7s ease-in-out;
+}
