@@ -1,5 +1,10 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
+:root {
+  --spacing-section-desktop: 6rem; /* ~96px */
+  --spacing-section-mobile: 3rem;  /* ~48px */
+  --spacing-element: 2rem; /* Internal spacing between title and content */
+}
 
 body {
   font-family: var(--font-lato), sans-serif;
@@ -12,6 +17,19 @@ h1, h2, h3, h4, h5, h6 {
 .bg-escuro {
   background-image: url('/images/Background.png');
   color: #fff;
+}
+
+/* Standard Section Spacing */
+.section-standard {
+  padding-top: var(--spacing-section-mobile);
+  padding-bottom: var(--spacing-section-mobile);
+}
+
+@media (min-width: 768px) {
+  .section-standard {
+    padding-top: var(--spacing-section-desktop);
+    padding-bottom: var(--spacing-section-desktop);
+  }
 }
 
 .banner {
@@ -36,54 +54,40 @@ h1, h2, h3, h4, h5, h6 {
   flex-wrap: wrap;
   justify-content: center;
   gap: 2vw;
-  margin-bottom: 3vh;
+  margin-bottom: var(--spacing-element);
 }
 
 .cardestilo {
   width: 90%;
-  /* Usando porcentagem para responsividade */
   max-width: 300px;
-  /* Limita a largura máxima */
   height: auto;
-  /* Remove a altura fixa */
   box-shadow: 0px 3px 4px 3px rgba(0, 0, 0, 0.40);
   margin-bottom: 2rem;
   padding: 1rem;
-  /* Ajusta o padding para ser mais consistente */
   text-align: center;
-  /* Centraliza o texto */
 }
 
 .cardestilo img {
   width: 50px;
-  /* Define um tamanho fixo para a imagem */
   height: auto;
   margin-bottom: 1rem;
-  /* Adiciona margem inferior para espaçamento */
 }
 
 .cardestilo h3 {
   font-size: 1.5rem;
-  /* Ajusta o tamanho da fonte */
   margin-bottom: 0.5rem;
-  /* Adiciona margem inferior para espaçamento */
 }
 
 .cardestilo p {
   font-size: 1rem;
-  /* Ajusta o tamanho da fonte */
   margin-bottom: 1rem;
-  /* Adiciona margem inferior para espaçamento */
 }
 
 .cardestilo span {
   font-size: 0.9rem;
-  /* Ajusta o tamanho da fonte */
   font-weight: bold;
   display: block;
-  /* Faz o span ocupar toda a linha */
   margin-top: 0.8rem;
-  /* Adiciona margem superior para espaçamento */
 }
 
 @media (min-width: 768px) {
@@ -109,14 +113,12 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 600px) {
   .cardestilo {
     width: 45%;
-    /* Ajusta a largura para telas maiores */
   }
 }
 
 @media (min-width: 900px) {
   .cardestilo {
     width: 30%;
-    /* Ajusta a largura para telas ainda maiores */
   }
 }
 
@@ -142,18 +144,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sections {
+  /* Deprecated: replaced by .section-standard */
   margin-bottom: 6vh;
-
 }
 
 .titulo {
-  margin-top: 6vh;
-  margin-bottom: 3vh;
+  margin-top: 0;
+  margin-bottom: var(--spacing-element);
   width: 20rem;
+  max-width: 100%;
 }
 
 #agendar {
-  padding-bottom: 6vh;
+  /* Padding will be handled by .section-standard */
 }
 
 #agendar h4 {
@@ -260,7 +263,7 @@ h1, h2, h3, h4, h5, h6 {
 
   border-radius: 1rem;
 
-  margin-bottom: 6vh;
+  margin-bottom: var(--spacing-element);
   box-shadow: 0 10px 15px -3px var(--card-shadow), 0 4px 6px -2px var(--card-shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -359,8 +362,8 @@ h1, h2, h3, h4, h5, h6 {
 .price-table-container {
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
-  margin-bottom: 4rem;
+  margin-top: var(--spacing-element);
+  margin-bottom: var(--spacing-element);
   width: 100%;
 }
 

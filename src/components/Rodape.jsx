@@ -3,7 +3,7 @@ import React from 'react';
 
 const Rodape = () => {
   return (
-    <footer className="text-light text-center bg-escuro">
+    <footer className="text-light text-center bg-escuro py-5">
           <p><strong>Desenvolvido Por</strong></p>
           <a href="https://calciphertech.vercel.app" target='blank'>
             <img src="/images/logo-criador.svg" style={{ width: '30vw', height: 'auto' }}  alt="Calcipher Tech" />

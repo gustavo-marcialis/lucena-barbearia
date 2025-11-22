@@ -3,7 +3,7 @@ import { Image, Div, Button } from 'react-bootstrap';
 
 function Local() {
   return (
-    <section className="text-center" id='local'>
+    <section className="section-standard text-center" id='local'>
       <Image src="/images/local.svg" alt="Local Título" className='titulo' />
       <br />
       {/* Adicionando o iframe para o Google Maps */}

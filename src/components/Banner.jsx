@@ -7,7 +7,7 @@ import Button from './Button';
 function Banner() {
   return (
     <section
-      className={styles.heroSection}
+      className={`${styles.heroSection} section-standard`}
       id='home'
     >
       <Container className={`animate-fade-in ${styles.contentWrapper}`}>

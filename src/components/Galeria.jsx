@@ -24,9 +24,9 @@ function Galeria() {
   };
 
   return (
-    <section className="bg-escuro text-light text-center py-5" id='galeria'>
+    <section className="bg-escuro text-light text-center section-standard" id='galeria'>
       <div className="container">
-        <Image src="/images/galeria.svg" alt="Galeria de Fotos" className='titulo img-fluid mb-5' style={{ maxWidth: '300px' }} />
+        <Image src="/images/galeria.svg" alt="Galeria de Fotos" className='titulo img-fluid' style={{ maxWidth: '300px' }} />
 
         <div className="gallery-grid">
           {galleryImages.map((image, index) => (
