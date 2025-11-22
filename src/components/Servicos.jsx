@@ -1,10 +1,9 @@
 import React from 'react';
 import { Image } from 'react-bootstrap';
 
-
 function Servicos() {
   return (
-    <section className="text-center" id='servicos'>
+    <section className="text-center section-standard" id='servicos'>
       <Image src="/images/servico.svg" alt="Serviços" className='titulo' />
 
       <div className="cards">

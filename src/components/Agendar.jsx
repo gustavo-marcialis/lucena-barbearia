@@ -61,7 +61,7 @@ function Agendar() {
   };
 
   return (
-    <main className="bg-escuro text-light text-center" id="agendar">
+    <main className="bg-escuro text-light text-center section-standard" id="agendar">
       <Image src="/images/agendamento.svg" alt="Agendamento Título" className="titulo" />
       
       {/* Documentação: 
@@ -106,7 +106,7 @@ function Agendar() {
       </Container>
 
       {selectedCalendlyUrl && (
-        <div id="agenda">
+        <div id="agenda" className="mt-4">
           <Calendly url={selectedCalendlyUrl} />
         </div>
       )}

@@ -3,7 +3,7 @@ import { Image, Div, Button } from 'react-bootstrap';
 
 function Local() {
   return (
-    <section className="text-center" id='local'>
+    <section className="text-center section-standard" id='local'>
       <Image src="/images/local.svg" alt="Local Título" className='titulo' />
       <br />
       {/* Adicionando o iframe para o Google Maps */}
@@ -19,7 +19,7 @@ function Local() {
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
-      <p><strong>Rua Santo Antonio, 622, Vila Caiçara - Praia grande/SP</strong></p>
+      <p className="mt-3"><strong>Rua Santo Antonio, 622, Vila Caiçara - Praia grande/SP</strong></p>
 
     
     </section>

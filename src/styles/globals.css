@@ -1,5 +1,13 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
+:root {
+  /* Spacing System */
+  --spacing-section-mobile: 3rem;  /* ~48px */
+  --spacing-section-desktop: 6rem; /* ~96px */
+  --spacing-element: 1.5rem;       /* ~24px */
+  --spacing-heading: 2.5rem;       /* ~40px */
+  --container-padding-x: 1rem;
+}
 
 body {
   font-family: var(--font-lato), sans-serif;
@@ -7,6 +15,22 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-playfair), serif;
+}
+
+/* Standard Section Class */
+.section-standard {
+  padding-top: var(--spacing-section-mobile);
+  padding-bottom: var(--spacing-section-mobile);
+  padding-left: var(--container-padding-x);
+  padding-right: var(--container-padding-x);
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .section-standard {
+    padding-top: var(--spacing-section-desktop);
+    padding-bottom: var(--spacing-section-desktop);
+  }
 }
 
 .bg-escuro {
@@ -19,80 +43,29 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 50vh;
-  margin-top: 2vh;
+  min-height: 50vh; /* Changed to min-height to avoid cutoff */
+  padding-top: 4rem; /* Account for navbar */
+  padding-bottom: 2rem;
 }
 
 .banner h1 {
-  font-size: 400%;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 .banner p {
-  font-size: 150%;
-}
-
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2vw;
-  margin-bottom: 3vh;
-}
-
-.cardestilo {
-  width: 90%;
-  /* Usando porcentagem para responsividade */
-  max-width: 300px;
-  /* Limita a largura máxima */
-  height: auto;
-  /* Remove a altura fixa */
-  box-shadow: 0px 3px 4px 3px rgba(0, 0, 0, 0.40);
-  margin-bottom: 2rem;
-  padding: 1rem;
-  /* Ajusta o padding para ser mais consistente */
+  font-size: 1.25rem;
+  margin-bottom: 0;
   text-align: center;
-  /* Centraliza o texto */
-}
-
-.cardestilo img {
-  width: 50px;
-  /* Define um tamanho fixo para a imagem */
-  height: auto;
-  margin-bottom: 1rem;
-  /* Adiciona margem inferior para espaçamento */
-}
-
-.cardestilo h3 {
-  font-size: 1.5rem;
-  /* Ajusta o tamanho da fonte */
-  margin-bottom: 0.5rem;
-  /* Adiciona margem inferior para espaçamento */
-}
-
-.cardestilo p {
-  font-size: 1rem;
-  /* Ajusta o tamanho da fonte */
-  margin-bottom: 1rem;
-  /* Adiciona margem inferior para espaçamento */
-}
-
-.cardestilo span {
-  font-size: 0.9rem;
-  /* Ajusta o tamanho da fonte */
-  font-weight: bold;
-  display: block;
-  /* Faz o span ocupar toda a linha */
-  margin-top: 0.8rem;
-  /* Adiciona margem superior para espaçamento */
 }
 
 @media (min-width: 768px) {
   .mobile-only {
     display: none;
   }
-
-  .banner {
-    margin-top: 5vh;
+  .banner h1 {
+    font-size: 4.5rem;
   }
 }
 
@@ -100,24 +73,60 @@ h1, h2, h3, h4, h5, h6 {
   .mobile-only {
     display: block;
   }
+}
 
-  .banner {
-    margin-top: 5vh;
-  }
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: var(--spacing-element);
+}
+
+.cardestilo {
+  width: 90%;
+  max-width: 300px;
+  height: auto;
+  box-shadow: 0px 3px 4px 3px rgba(0, 0, 0, 0.40);
+  margin-bottom: 2rem; /* Fallback */
+  padding: 1.5rem;
+  text-align: center;
+  background: #fff; /* Ensure background if needed */
 }
 
 @media (min-width: 600px) {
   .cardestilo {
     width: 45%;
-    /* Ajusta a largura para telas maiores */
   }
 }
 
 @media (min-width: 900px) {
   .cardestilo {
     width: 30%;
-    /* Ajusta a largura para telas ainda maiores */
   }
+}
+
+.cardestilo img {
+  width: 50px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.cardestilo h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.cardestilo p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.cardestilo span {
+  font-size: 0.9rem;
+  font-weight: bold;
+  display: block;
+  margin-top: 0.8rem;
 }
 
 
@@ -128,54 +137,47 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
 }
 
-.agendar a {
+.agendar a, .agendar a:hover {
   color: #fff;
-  border: none;
   text-decoration: none;
 }
 
 .agendar:hover {
   background-color: #332321;
   color: #fff;
-  border: none;
-  text-decoration: none;
 }
 
+/* Deprecated/Legacy classes - Refactoring to use variables where possible */
 .sections {
-  margin-bottom: 6vh;
-
+  /* Keeping for backward compatibility but encouraging .section-standard */
+  margin-bottom: var(--spacing-section-mobile);
 }
 
 .titulo {
-  margin-top: 6vh;
-  margin-bottom: 3vh;
-  width: 20rem;
+  margin-top: 0; /* Handled by section padding */
+  margin-bottom: var(--spacing-heading);
+  width: auto; /* Removed fixed width 20rem which causes centering issues */
+  max-width: 100%;
+  text-align: center;
 }
 
 #agendar {
-  padding-bottom: 6vh;
+  /* This ID is used in Agendar.jsx section */
+  /* Styles moved to .section-standard applied to component */
 }
 
 #agendar h4 {
-  font-size: 150%;
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-element);
 }
 
 .botao {
-  font-size: 100%;
-  margin-top: 1vh;
-  margin-bottom: 6vh;
+  font-size: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
   border: none;
   text-decoration: none;
-  justify-content: center;
-  align-items: center;
-}
-
-.botao:hover {
-  font-size: 100%;
-  margin-top: 1vh;
-  margin-bottom: 6vh;
-  border: none;
-  text-decoration: none;
+  display: inline-flex; /* Improved alignment */
   justify-content: center;
   align-items: center;
 }
@@ -183,7 +185,7 @@ h1, h2, h3, h4, h5, h6 {
 .botao-dark {
   background-color: #332321;
   color: #fff;
-  padding: 0.5rem 1.5rem;
+  padding: 0.75rem 2rem;
   border-radius: 0.5rem;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
@@ -191,11 +193,14 @@ h1, h2, h3, h4, h5, h6 {
 .botao-dark:hover {
   background-color: #4a3330;
   color: #fff;
+  transform: translateY(-2px);
 }
 
 .botao-light {
   color: #fff;
   background-color: #564746;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
 }
 
 .botao-light:hover {
@@ -203,16 +208,10 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #564746;
 }
 
-.galeria img {
-  width: 20vw;
+.galeria img, .galeria2 img {
+  /* Legacy styles, likely replaced by grid */
+  width: 100%;
   height: auto;
-  margin-right: 2vh;
-}
-
-.galeria2 img {
-  width: 20vw;
-  height: auto;
-  margin-right: 2vh;
 }
 
 .whatsapp-button {
@@ -221,34 +220,31 @@ h1, h2, h3, h4, h5, h6 {
   right: 20px;
   background-color: #25D366;
   color: white;
-  border-radius: 100%;
+  border-radius: 50%;
   padding: 15px;
   z-index: 1000;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
 }
 
 .atendimento {
   background-color: #fff;
   color: #332321;
-  padding-left: 1vw;
-  padding-right: 1vw;
+  /* Padding handled by section-standard if applied */
 }
 
-
-
-
-
+/* Card Component Styles */
 .card {
   --bg-card: #332321;
   --primary: #fff;
   --primary-800: #fff;
   --primary-shadow: #332321;
   --light: #d9d9d9;
-  --zinc-800: #18181b;
-  --bg-linear: linear-gradient(0deg, var(--primary) 50%, var(--light) 125%);
   --card-shadow: rgba(0, 0, 0, 0.4);
-
-  position: relative;
 
   display: flex;
   flex-direction: column;
@@ -257,10 +253,8 @@ h1, h2, h3, h4, h5, h6 {
   padding: 1rem;
   width: 16rem;
   background-color: var(--bg-card);
-
   border-radius: 1rem;
-
-  margin-bottom: 6vh;
+  margin-bottom: 2rem;
   box-shadow: 0 10px 15px -3px var(--card-shadow), 0 4px 6px -2px var(--card-shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -269,145 +263,55 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 20px 25px -5px var(--card-shadow), 0 10px 10px -5px var(--card-shadow);
 }
 
-.image_container {
-  overflow: hidden;
-  cursor: pointer;
-
-  position: relative;
-  z-index: 5;
-
-  width: 100%;
-  height: 8rem;
-  background-color: var(--primary-800);
-
-  border-radius: 0.5rem;
-
-  padding-top: 7%;
-}
-
-.image_container .image {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  width: 3rem;
-  fill: var(--light);
-}
-
-.title {
-  overflow: clip;
-
-  width: 100%;
-
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--light);
-  text-wrap: nowrap;
-}
-
-.title p {
-  overflow: clip;
-  text-align: left;
-  width: 100%;
-
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--light);
-  text-wrap: wrap;
-}
-
-.action {
-  display: flex;
-  align-items: start;
-  gap: 1rem;
-}
-
-.price {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--light);
-}
-
-.cart-button {
-  cursor: pointer;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.25rem;
-
-  padding: 0.5rem;
-  width: 100%;
-  background-image: var(--bg-linear);
-
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--light);
-  text-wrap: nowrap;
-
-  border: 2px solid hsla(262, 83%, 58%, 0.5);
-  border-radius: 0.5rem;
-  box-shadow: inset 0 0 0.25rem 1px var(--light);
-}
-
-.cart-button .cart-icon {
-  width: 1rem;
-}
-
 /* Price Table Styles */
 .price-table-container {
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
-  margin-bottom: 4rem;
+  margin-top: var(--spacing-element);
+  margin-bottom: var(--spacing-element);
   width: 100%;
 }
 
 .price-table {
-  width: 90%;
-  max-width: 700px;
-  border-collapse: collapse;
+  width: 100%;
+  max-width: 800px;
+  border-collapse: separate; /* changed to separate for border-radius */
+  border-spacing: 0;
   background: linear-gradient(145deg, #3a2a28, #2e1f1d);
   color: #fff;
   border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
   border: 1px solid #564746;
 }
 
 .price-table caption {
   caption-side: top;
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: bold;
   color: #332321;
   margin-bottom: 1.5rem;
   font-family: var(--font-playfair), serif;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 .price-table th,
 .price-table td {
-  padding: 1.25rem 1.5rem;
+  padding: 1rem 1.5rem;
   text-align: left;
 }
 
 .price-table th {
   background-color: #ffffff;
-  color: #800020; /* Bordeaux text */
+  color: #800020;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.05em;
   border-bottom: 2px solid #800020;
 }
 
-.price-table th:last-child {
-  text-align: right;
-}
-
 .price-table td {
-  border-bottom: 1px solid rgba(128, 0, 32, 0.2); /* Subtle bordeaux separator */
+  border-bottom: 1px solid rgba(128, 0, 32, 0.2);
 }
 
 .price-table tr:last-child td {
@@ -415,31 +319,30 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .price-table tr:hover {
-  background-color: rgba(128, 0, 32, 0.1); /* Bordeaux tint on hover */
-  transform: scale(1.01);
-  transition: all 0.2s ease;
+  background-color: rgba(128, 0, 32, 0.1);
 }
 
-.price-table td:last-child {
+.price-table td:last-child, .price-table th:last-child {
   text-align: right;
 }
 
 .price-badge {
   background-color: #fff;
-  color: #332321; /* Brown text */
+  color: #332321;
   padding: 0.35rem 1rem;
-  border-radius: 9999px; /* Fully rounded */
+  border-radius: 9999px;
   font-weight: bold;
   display: inline-block;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   font-size: 1.1rem;
 }
-/* New Gallery Styles */
+
+/* Gallery Styles */
 .gallery-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
-  padding: 0 1rem 2rem 1rem;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -450,7 +353,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 992px) {
   .gallery-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -483,7 +386,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(51, 35, 33, 0.4); /* Dark brown overlay */
+  background: rgba(51, 35, 33, 0.5);
   opacity: 0;
   transition: opacity 0.3s ease;
   display: flex;
@@ -498,36 +401,26 @@ h1, h2, h3, h4, h5, h6 {
 .gallery-icon {
   color: #fff;
   font-size: 2rem;
-  transform: scale(0);
-  transition: transform 0.3s ease;
 }
 
-.gallery-item:hover .gallery-icon {
-  transform: scale(1);
-}
-
-/* Lightbox Modal Customization */
+/* Lightbox */
 .gallery-modal .modal-content {
   background-color: transparent;
   border: none;
 }
-
 .gallery-modal .modal-body {
   padding: 0;
-  position: relative;
   background: transparent;
 }
-
 .gallery-modal img {
   border-radius: 0.5rem;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   max-height: 85vh;
   width: auto;
   max-width: 100%;
-  margin: 0 auto;
   display: block;
+  margin: 0 auto;
 }
-
 .gallery-modal .btn-close {
   position: absolute;
   top: -2rem;
@@ -536,9 +429,5 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0.8;
   border-radius: 50%;
   padding: 0.5rem;
-  z-index: 1055;
-}
-
-.gallery-modal .btn-close:hover {
-  opacity: 1;
+  z-index: 1060;
 }
