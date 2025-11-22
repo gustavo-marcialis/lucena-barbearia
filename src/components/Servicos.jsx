@@ -4,8 +4,10 @@ import { Image } from 'react-bootstrap';
 
 function Servicos() {
   return (
-    <section className="section-standard text-center" id='servicos'>
-      <Image src="/images/servico.svg" alt="Serviços" className='titulo' />
+    <section className="section-standard" id='servicos'>
+      <div className="text-center">
+        <Image src="/images/servico.svg" alt="Serviços" className='titulo' />
+      </div>
 
       <div className="cards">
         <div className="card hover-scale animate-slide-in-up delay-100">

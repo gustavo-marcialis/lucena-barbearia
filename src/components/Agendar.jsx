@@ -61,8 +61,10 @@ function Agendar() {
   };
 
   return (
-    <section className="bg-escuro text-light text-center section-standard" id="agendar">
-      <Image src="/images/agendamento.svg" alt="Agendamento Título" className="titulo" />
+    <section className="bg-escuro text-light section-standard" id="agendar">
+      <div className="text-center">
+        <Image src="/images/agendamento.svg" alt="Agendamento Título" className="titulo" />
+      </div>
       
       {/* Documentação: 
       Alerta condicional que só é exibido se Temoteo estiver de férias.
@@ -71,7 +73,7 @@ function Agendar() {
         <Container className='mb-4'>
           <Row className="justify-content-center">
             <Col xs={12} md={8}>
-              <Alert variant="warning" className="text-center text-dark">
+              <Alert variant="warning" className="text-start text-dark">
                 <Alert.Heading>Aviso Importante: Temoteo em Férias!</Alert.Heading>
                 <p>
                   O profissional Temoteo está de férias e retorna em Maio. Nesse período, será substituído pelo Vinícius.
@@ -84,12 +86,19 @@ function Agendar() {
         </Container>
       )}
       
-      <p><strong>Faça seu agendamento em menos de um minuto; simples e rápido!</strong></p><br />
-      <p>Clique no profissional desejado para ver a agenda</p><br />
+      <Container>
+        <Row className="justify-content-center">
+          <Col xs={12} md={8} className="text-start">
+             <p><strong>Faça seu agendamento em menos de um minuto; simples e rápido!</strong></p><br />
+             <p>Clique no profissional desejado para ver a agenda</p><br />
+          </Col>
+        </Row>
+      </Container>
+
       <Container>
         <Row>
           {profissionais.map((profissional, index) => (
-            <Col key={index} xs={12} md={6} className="mb-4">
+            <Col key={index} xs={12} md={6} className="mb-4 text-center">
               <div onClick={() => handleProfissionalClick(profissional.calendlyUrl)} style={{ cursor: 'pointer' }}>
                 <Image
                   src={profissional.foto}
