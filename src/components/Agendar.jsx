@@ -71,7 +71,7 @@ function Agendar() {
         <Container className='mb-4'>
           <Row className="justify-content-center">
             <Col xs={12} md={8}>
-              <Alert variant="warning" className="text-center text-dark">
+              <Alert variant="warning" className="text-start text-dark">
                 <Alert.Heading>Aviso Importante: Temoteo em Férias!</Alert.Heading>
                 <p>
                   O profissional Temoteo está de férias e retorna em Maio. Nesse período, será substituído pelo Vinícius.
@@ -84,8 +84,10 @@ function Agendar() {
         </Container>
       )}
       
-      <p><strong>Faça seu agendamento em menos de um minuto; simples e rápido!</strong></p><br />
-      <p>Clique no profissional desejado para ver a agenda</p><br />
+      <div className="d-inline-block text-start mb-4">
+        <p className="mb-2"><strong>Faça seu agendamento em menos de um minuto; simples e rápido!</strong></p>
+        <p className="mb-0">Clique no profissional desejado para ver a agenda</p>
+      </div>
       <Container>
         <Row>
           {profissionais.map((profissional, index) => (
@@ -98,7 +100,9 @@ function Agendar() {
                   className="mb-2" 
                   style={{ width: '150px', height: '150px' }}
                 />
-                <p><strong>{profissional.nome}</strong></p>
+                <div className="d-inline-block text-start">
+                  <p><strong>{profissional.nome}</strong></p>
+                </div>
               </div>
             </Col>
           ))}

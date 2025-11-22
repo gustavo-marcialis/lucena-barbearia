@@ -10,16 +10,18 @@ const Rodape = () => {
         <Row className="align-items-center justify-content-center">
           {/* Copyright Section */}
           <Col md={6} className="text-center text-md-start mb-3 mb-md-0">
-            <p className="mb-0">
-              &copy; {currentYear} <strong>Lucena Barbearia</strong>. <br className="d-md-none" />
-              Todos os direitos reservados.
-            </p>
+            <div className="d-inline-block text-start">
+              <p className="mb-0">
+                &copy; {currentYear} <strong>Lucena Barbearia</strong>. <br className="d-md-none" />
+                Todos os direitos reservados.
+              </p>
+            </div>
           </Col>
 
           {/* Developer Credits Section */}
           <Col md={6} className="text-center text-md-end">
              <div className="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-end gap-2">
-               <span className="small text-uppercase" style={{ letterSpacing: '1px', opacity: 0.8, fontSize: '0.8rem' }}>
+               <span className="small text-uppercase text-start" style={{ letterSpacing: '1px', opacity: 0.8, fontSize: '0.8rem' }}>
                  Desenvolvido Por
                </span>
                <a
