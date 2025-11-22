@@ -1,32 +1,83 @@
-import React from 'react';
-import { Image, Div, Button } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Image, Button, Modal } from 'react-bootstrap';
+
+const galleryImages = [
+  { src: "/images/fachada.jpg", alt: "Fachada da Barbearia" },
+  { src: "/images/profissional.jpg", alt: "Profissional em Ação" },
+  { src: "/images/corte.jpg", alt: "Corte de Cabelo Detalhado" },
+  { src: "/images/cliente.jpg", alt: "Cliente Satisfeito" },
+  { src: "/images/servico.jpg", alt: "Ambiente e Serviço" },
+];
 
 function Galeria() {
+  const [showModal, setShowModal] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const handleShow = (image) => {
+    setSelectedImage(image);
+    setShowModal(true);
+  };
+
+  const handleClose = () => {
+    setShowModal(false);
+    setSelectedImage(null);
+  };
+
   return (
-    <section className="bg-escuro text-light text-center" id='galeria'>
-      <Image src="/images/galeria.svg" alt="Galeria de Fotos" className='titulo' />
+    <section className="bg-escuro text-light text-center py-5" id='galeria'>
+      <div className="container">
+        <Image src="/images/galeria.svg" alt="Galeria de Fotos" className='titulo img-fluid mb-5' style={{ maxWidth: '300px' }} />
 
-      <div className="d-flex justify-content-center galeria">
-        <Image src="/images/fachada.jpg" className="d-block" alt="Fachada" />
-        <Image src="/images/profissional.jpg" className="d-block" alt="Profissional" />
-        <Image src="/images/corte.jpg" className="d-block" alt="Corte" />
+        <div className="gallery-grid">
+          {galleryImages.map((image, index) => (
+            <div
+              key={index}
+              className="gallery-item animate-slide-in-up"
+              style={{ animationDelay: `${index * 0.1}s` }}
+              onClick={() => handleShow(image)}
+            >
+              <Image src={image.src} alt={image.alt} fluid />
+              <div className="gallery-overlay">
+                <div className="gallery-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" className="bi bi-zoom-in" viewBox="0 0 16 16">
+                    <path fillRule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11M13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0"/>
+                    <path d="M10.344 11.742c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1 6.538 6.538 0 0 1-1.398 1.4z"/>
+                    <path fillRule="evenodd" d="M6.5 3a.5.5 0 0 1 .5.5V6h2.5a.5.5 0 0 1 0 1H7v2.5a.5.5 0 0 1-1 0V7H3.5a.5.5 0 0 1 0-1H6V3.5a.5.5 0 0 1 .5-.5"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-5">
+          <a href="https://www.instagram.com/barbearia_lucena/" target='_blank' rel='noreferrer' className="text-decoration-none">
+            <Button type='button' className='botao botao-light d-inline-flex align-items-center gap-2 px-4 py-2 rounded-pill shadow'>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-instagram" viewBox="0 0 16 16">
+                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+              </svg>
+              Visitar Instagram
+            </Button>
+          </a>
+        </div>
       </div>
-      <br />
 
-      <div className="d-flex justify-content-center galeria2">
-        <Image src="/images/cliente.jpg" className="d-block" alt="Cliente Infantil" />
-        <Image src="/images/servico.jpg" className="d-block" alt="Serviço" />
-      </div>
-      <br />
-
-      <a href="https://www.instagram.com/barbearia_lucena/" target='_blank' rel='noreferrer'>
-        <Button type='button' className='botao botao-light'>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-          </svg>
-          &nbsp;
-          Visitar Instagram
-        </Button></a>
+      {/* Modal Lightbox */}
+      <Modal
+        show={showModal}
+        onHide={handleClose}
+        centered
+        size="lg"
+        className="gallery-modal"
+        aria-labelledby="contained-modal-title-vcenter"
+      >
+        <Modal.Body>
+            <Button variant="close" aria-label="Close" onClick={handleClose} />
+            {selectedImage && (
+              <Image src={selectedImage.src} alt={selectedImage.alt} fluid />
+            )}
+        </Modal.Body>
+      </Modal>
     </section>
   );
 }
