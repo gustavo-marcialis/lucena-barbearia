@@ -61,7 +61,7 @@ function Agendar() {
   };
 
   return (
-    <main className="bg-escuro text-light text-center" id="agendar">
+    <section className="bg-escuro text-light text-center section-standard" id="agendar">
       <Image src="/images/agendamento.svg" alt="Agendamento Título" className="titulo" />
       
       {/* Documentação: 
@@ -110,7 +110,7 @@ function Agendar() {
           <Calendly url={selectedCalendlyUrl} />
         </div>
       )}
-    </main>
+    </section>
   );
 }
 
