@@ -70,24 +70,8 @@
 }
 
 .ctaButton {
-  background-color: #800020 !important;
-  border-color: #800020 !important;
-  color: #fff !important;
+  /* Retaining basic positioning if needed, but visual styles are now handled by Button component */
   letter-spacing: 2px;
-  font-weight: 700 !important;
-  box-shadow: 0 10px 25px rgba(128, 0, 32, 0.3);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  padding: 1rem 3rem !important;
-  font-size: 1.1rem;
-}
-
-.ctaButton:hover,
-.ctaButton:focus {
-  background-color: #fff !important;
-  color: #332321 !important;
-  border-color: #fff !important;
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 .scrollIndicator {

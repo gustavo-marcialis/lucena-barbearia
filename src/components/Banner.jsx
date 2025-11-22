@@ -1,7 +1,8 @@
 import React from 'react';
-import { Container, Button } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import styles from '../styles/Banner.module.css';
 import { Link } from 'react-scroll';
+import Button from './Button';
 
 function Banner() {
   return (
@@ -31,7 +32,8 @@ function Banner() {
           <Button
             href="#agendar"
             variant="primary"
-            className={`rounded-pill text-uppercase ${styles.ctaButton}`}
+            size="lg"
+            className={styles.ctaButton}
           >
             Agendar Horário
           </Button>
