@@ -1,6 +1,6 @@
 .heroSection {
   position: relative;
-  background-image: url('/images/Background.png');
+  background-image: url('/images/highlight-bg.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* Parallax effect */

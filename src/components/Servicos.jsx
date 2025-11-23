@@ -6,7 +6,7 @@ function Servicos() {
   return (
     <section className="section-standard" id='servicos'>
       <div className="text-center">
-        <Image src="/images/servico.svg" alt="Serviços" className='titulo' />
+        <Image src="/images/servico.svg" alt="Serviços Título" className="titulo" fluid />
       </div>
 
       <div className="cards">

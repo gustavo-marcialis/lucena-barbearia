@@ -8,6 +8,8 @@
 
 body {
   font-family: var(--font-lato), sans-serif;
+  background-color: #121212;
+  color: #fff;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -15,7 +17,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bg-escuro {
-  background-image: url('/images/Background.png');
+  background-image: url('/images/highlight-bg.png');
   color: #fff;
 }
 
@@ -231,8 +233,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .atendimento {
-  background-color: #fff;
-  color: #332321;
+  background-color: #121212;
+  color: #fff;
   padding-left: 1vw;
   padding-right: 1vw;
 }
@@ -386,7 +388,7 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   font-size: 2.5rem;
   font-weight: bold;
-  color: #332321;
+  color: #fff;
   margin-bottom: 1.5rem;
   font-family: var(--font-playfair), serif;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
@@ -399,8 +401,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .price-table th {
-  background-color: #ffffff;
-  color: #800020; /* Bordeaux text */
+  background-color: #2e1f1d;
+  color: #fff; /* White text */
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -430,14 +432,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .price-badge {
-  background-color: #fff;
-  color: #332321; /* Brown text */
+  background-color: #332321; /* Brown background */
+  color: #fff; /* White text */
   padding: 0.35rem 1rem;
   border-radius: 9999px; /* Fully rounded */
   font-weight: bold;
   display: inline-block;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   font-size: 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 /* New Gallery Styles */
 .gallery-grid {
