@@ -47,7 +47,7 @@
 /* Gold Variant */
 .gold {
   background-color: #d4af37;
-  color: #332321;
+  color: #800020;
   box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
 }
 
@@ -59,13 +59,13 @@
 
 /* Dark Variant */
 .dark {
-  background-color: #332321;
+  background-color: #800020;
   color: #ffffff;
   box-shadow: 0 4px 15px rgba(51, 35, 33, 0.4);
 }
 
 .dark:hover:not(:disabled) {
-  background-color: #4a3330;
+  background-color: #600018;
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(51, 35, 33, 0.6);
 }
@@ -79,7 +79,7 @@
 
 .outline:hover:not(:disabled) {
   background-color: #d4af37;
-  color: #332321;
+  color: #800020;
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
 }

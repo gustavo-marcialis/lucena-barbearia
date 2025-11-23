@@ -5,7 +5,7 @@ import Button from './Button';
 
 const MyNavbar = () => {
   return (
-    <Navbar bg="light" expand="lg" fixed="top">
+    <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
       <Container>
         <Navbar.Brand href="#">
           <Image src="/images/logo-h.svg" alt="Logo" width="70" />
