@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Barbearia Lucena</string>
+    <string name="title_activity_main">Barbearia Lucena</string>
+    <string name="package_name">com.barbearialucena.app</string>
+    <string name="custom_url_scheme">com.barbearialucena.app</string>
+</resources>
