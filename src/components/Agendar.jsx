@@ -14,14 +14,14 @@ const substituto = {
   nome: 'Vinícius (Substituto Temporário)',
   // ALTERAÇÃO 1: Novo caminho da foto para o Vinícius (vinicius.png)
   foto: '/images/vinicius.png',        
-  calendlyUrl: 'https://calendly.com/temoteolucena/30min?back=1&month=2024-06', // Mesma URL do Temoteo
+  calendlyUrl: 'https://calendly.com/temoteolucena/30min', // Mesma URL do Temoteo
 };
 
 // Dados originais do Temoteo (para fácil reversão)
 const temoteoOriginal = {
   nome: 'Temoteo',
   foto: '/images/temoteo.jpg',
-  calendlyUrl: 'https://calendly.com/temoteolucena/30min?back=1&month=2024-06',
+  calendlyUrl: 'https://calendly.com/temoteolucena/30min',
 };
 
 // === FIM: NOVAS VARIÁVEIS DE CONTROLE ===
@@ -37,7 +37,7 @@ function Agendar() {
       nome: 'Ivan',
       // ALTERAÇÃO 2: Novo caminho da foto para o Ivan (lucena.png)
       foto: '/images/lucena.png',
-      calendlyUrl: 'https://calendly.com/lucenabarbearia013/lucena-barbearia?back=1&month=2024-06',
+      calendlyUrl: 'https://calendly.com/lucenabarbearia013/lucena-barbearia',
     },
     // Condição para exibir Temoteo ou o Substituto Vinícius
     IS_TEMOTEO_ON_VACATION
