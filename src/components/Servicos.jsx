@@ -121,15 +121,15 @@ function Servicos() {
           <tbody>
             <tr>
               <td>Corte</td>
-              <td><span className="price-badge">R$ 40,00</span></td>
+              <td><span className="price-badge">R$ 45,00</span></td>
             </tr>
             <tr>
               <td>Barba</td>
-              <td><span className="price-badge">R$ 40,00</span></td>
+              <td><span className="price-badge">R$ 45,00</span></td>
             </tr>
             <tr>
               <td>Corte + Barba</td>
-              <td><span className="price-badge">R$ 70,00</span></td>
+              <td><span className="price-badge">R$ 80,00</span></td>
             </tr>
             <tr>
               <td>Pézinho</td>
