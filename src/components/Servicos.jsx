@@ -28,7 +28,7 @@ function Servicos() {
                   <path d="M8 13.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12" />
                 </svg>
                 &nbsp;
-                40,00
+                45,00
               </span>
               &nbsp;&nbsp;
               <span>
@@ -61,7 +61,7 @@ function Servicos() {
                   <path d="M8 13.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12" />
                 </svg>
                 &nbsp;
-                40,00
+                45,00
               </span>
               &nbsp;&nbsp;
               <span>
