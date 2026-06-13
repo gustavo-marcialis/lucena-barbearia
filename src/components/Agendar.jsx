@@ -11,7 +11,7 @@ const IS_TEMOTEO_ON_VACATION = true; // <-- MUDAR PARA false QUANDO O TEMOTEO VO
 // Documentação: 
 // Objeto que armazena os dados do Vinícius. Ele usará a mesma URL de agendamento do Temoteo.
 const substituto = {
-  nome: 'Vinícius (Substituto Temporário)',
+  nome: 'Vinicios Superbi',
   // ALTERAÇÃO 1: Novo caminho da foto para o Vinícius (vinicius.png)
   foto: '/images/vinicius.png',        
   calendlyUrl: 'https://calendly.com/temoteolucena/30min', // Mesma URL do Temoteo
@@ -34,9 +34,9 @@ function Agendar() {
   // Se IS_TEMOTEO_ON_VACATION for true, o objeto 'substituto' entra no lugar de 'Temoteo'.
   const profissionais = [
     {
-      nome: 'Ivan',
+      nome: 'Temoteo',
       // ALTERAÇÃO 2: Novo caminho da foto para o Ivan (lucena.png)
-      foto: '/images/lucena.png',
+      foto: '/images/temoteo-novo.jpg',
       calendlyUrl: 'https://calendly.com/lucenabarbearia013/lucena-barbearia',
     },
     // Condição para exibir Temoteo ou o Substituto Vinícius
@@ -74,11 +74,11 @@ function Agendar() {
           <Row className="justify-content-center">
             <Col xs={12} md={8}>
               <Alert variant="warning" className="text-start text-dark">
-                <Alert.Heading>Aviso Importante: Temoteo em Férias!</Alert.Heading>
+                <Alert.Heading>Aviso Importante: Ivan em Férias!</Alert.Heading>
                 <p>
-                  O profissional Temoteo está de férias e retorna em Maio. Nesse período, será substituído pelo Vinícius.
+                  O profissional Ivan Lucena está de férias. Nesse período, será substituído pelo Temoteo.
                   <br />
-                  Você pode agendar normalmente através do Vinícius, que usará a mesma agenda. O Temoteo retorna após o período de férias.
+                  Você pode agendar normalmente através do Temoteo, que usará a mesma agenda. O Ivan retorna após o período de férias.
                 </p>
               </Alert>
             </Col>
