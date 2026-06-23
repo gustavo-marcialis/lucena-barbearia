@@ -2,47 +2,25 @@ import React, { useState, useEffect } from 'react';
 import { InlineWidget as Calendly } from 'react-calendly';
 import { Image, Container, Row, Col, Alert } from 'react-bootstrap';
 
-// === INÍCIO: NOVAS VARIÁVEIS DE CONTROLE ===
-
-// Documentação: 
-// Use esta chave para controlar se Temoteo está de férias (true) ou não (false).
-const IS_TEMOTEO_ON_VACATION = true; // <-- MUDAR PARA false QUANDO O TEMOTEO VOLTAR
-
-// Documentação: 
-// Objeto que armazena os dados do Vinícius. Ele usará a mesma URL de agendamento do Temoteo.
-const substituto = {
-  nome: 'Vinicios Superbi',
-  // ALTERAÇÃO 1: Novo caminho da foto para o Vinícius (vinicius.png)
-  foto: '/images/vinicius.png',        
-  calendlyUrl: 'https://calendly.com/temoteolucena/30min', // Mesma URL do Temoteo
-};
-
-// Dados originais do Temoteo (para fácil reversão)
-const temoteoOriginal = {
-  nome: 'Temoteo',
-  foto: '/images/temoteo.jpg',
-  calendlyUrl: 'https://calendly.com/temoteolucena/30min',
-};
-
-// === FIM: NOVAS VARIÁVEIS DE CONTROLE ===
-
-
 function Agendar() {
   const [selectedCalendlyUrl, setSelectedCalendlyUrl] = useState(null);
 
-  // Documentação: Lógica que decide quem aparece na lista.
-  // Se IS_TEMOTEO_ON_VACATION for true, o objeto 'substituto' entra no lugar de 'Temoteo'.
   const profissionais = [
     {
-      nome: 'Temoteo',
-      // ALTERAÇÃO 2: Novo caminho da foto para o Ivan (lucena.png)
-      foto: '/images/temoteo-novo.jpg',
+      nome: 'Ivan Lucena',
+      foto: '/images/lucena.png',
       calendlyUrl: 'https://calendly.com/lucenabarbearia013/lucena-barbearia',
     },
-    // Condição para exibir Temoteo ou o Substituto Vinícius
-    IS_TEMOTEO_ON_VACATION
-      ? substituto
-      : temoteoOriginal,
+    {
+      nome: 'Vinicios Superbi',
+      foto: '/images/vinicius.png',
+      calendlyUrl: 'https://calendly.com/temoteolucena/30min',
+    },
+    {
+      nome: 'Temoteo',
+      foto: '/images/temoteo-novo.jpg',
+      whatsapp: '5511945748945',
+    },
   ];
 
   // Aguardar o Calendly ser renderizado antes de rolar
@@ -66,25 +44,6 @@ function Agendar() {
         <Image src="/images/agendamento.svg" alt="Agendamento Título" className="titulo" />
       </div>
       
-      {/* Documentação: 
-      Alerta condicional que só é exibido se Temoteo estiver de férias.
-      */}
-      {IS_TEMOTEO_ON_VACATION && (
-        <Container className='mb-4'>
-          <Row className="justify-content-center">
-            <Col xs={12} md={8}>
-              <Alert variant="warning" className="text-start text-dark">
-                <Alert.Heading>Aviso Importante: Ivan em Férias!</Alert.Heading>
-                <p>
-                  O profissional Ivan Lucena está de férias. Nesse período, será substituído pelo Temoteo.
-                  <br />
-                  Você pode agendar normalmente através do Temoteo, que usará a mesma agenda. O Ivan retorna após o período de férias.
-                </p>
-              </Alert>
-            </Col>
-          </Row>
-        </Container>
-      )}
       
       <Container>
         <Row className="justify-content-center">
@@ -98,14 +57,19 @@ function Agendar() {
       <Container>
         <Row>
           {profissionais.map((profissional, index) => (
-            <Col key={index} xs={12} md={6} className="mb-4 text-center">
-              <div onClick={() => handleProfissionalClick(profissional.calendlyUrl)} style={{ cursor: 'pointer' }}>
+            <Col key={index} xs={12} md={4} className="mb-4 text-center">
+              <div onClick={() => {
+                if (profissional.whatsapp) {
+                  window.open(`https://wa.me/${profissional.whatsapp}`, '_blank');
+                } else {
+                  handleProfissionalClick(profissional.calendlyUrl);
+                }
+              }} style={{ cursor: 'pointer' }}>
                 <Image
                   src={profissional.foto}
                   alt={profissional.nome}
-                  // ALTERAÇÃO 3: Removida a propriedade roundedCircle para tirar o arredondamento
                   className="mb-2" 
-                  style={{ width: '150px', height: '150px' }}
+                  style={{ width: '150px', height: '150px', objectFit: 'cover' }}
                 />
                 <p><strong>{profissional.nome}</strong></p>
               </div>
